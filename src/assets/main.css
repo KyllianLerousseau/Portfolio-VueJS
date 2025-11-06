@@ -1,0 +1,22 @@
+@import "./base.css";
+
+:root {
+  --primary-light: #30cfd0;
+  --primary-dark: #330867;
+  --secondary: #4c5ae0;
+  --accent: #a5f3fc;
+  --neutral-dark: #0f172a;
+  --neutral-light: #f1f5f9;
+  --text-dark: #1e293b;
+  --text-light: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250vh;
+  font-family: "Roboto", sans-serif;
+}
