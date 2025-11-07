@@ -11,10 +11,11 @@
                 <h2>Concepteur Développeur d'Applications en formation</h2>
                 <p class="description">
                     Passionné par le développement web et mobile, je crée des applications interactives et
-                    responsives.
-                    Je maîtrise VueJs, JavaScript, PHP et Symfony et je suis à la recherche d’un stage pour mettre
+                    responsives.<br>
+                    <br>
+                    Je maîtrise VueJs, JavaScript, PHP, MySQL et Symfony et je suis à la recherche d’un stage pour mettre
                     mes
-                    compétences en pratique.
+                    compétences en pratique.<br>
                 </p>
             </div>
         </div>
@@ -41,6 +42,7 @@
     flex: 1;
     padding: 1.5rem;
     display: flex;
+    flex-direction: column;
     width: 100%;
     color: var(--text-light);
 }
@@ -63,13 +65,13 @@
 
 .title {
     flex: 1;
-    text-align: center;
-    padding-top: 8px;
+    text-align: left;
+    padding-top: 18px;
 }
 
 .description {
-    padding-left: 20px;
     text-align: left;
+    font-size: 22px;
 }
 
 .contenu-02 {
@@ -80,7 +82,8 @@
     color: var(--text-light);
 }
 
-.card-01, .card-02 {
+.card-01,
+.card-02 {
     flex: 1;
     background: rgba(255, 255, 255, 0.1);
     display: flex;

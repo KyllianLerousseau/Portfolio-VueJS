@@ -248,6 +248,11 @@ select {
     cursor: pointer;
 }
 
+.close-btn:hover {
+    background-color: var(--accent);
+    color: var(--text-dark);
+}
+
 .tech-container {
     margin-top: 1rem;
     text-align: center;
@@ -284,6 +289,10 @@ select {
     padding-top: 10px;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+.detailsBtn:hover {
+    color: var(--text-light);
 }
 
 @media (max-width: 600px) {
