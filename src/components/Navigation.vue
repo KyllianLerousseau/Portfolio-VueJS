@@ -1,6 +1,7 @@
 <template>
     <header>
         <nav>
+
             <a href="#" class="navLinks" :class="{ active: composantActif === 'home' }"
                 @click.prevent="composantActif = 'home'">Accueil</a>
             <a href="#" class="navLinks" :class="{ active: composantActif === 'about' }"
@@ -13,20 +14,22 @@
                 @click.prevent="composantActif = 'skills'">Compétences</a>
         </nav>
     </header>
-    <div class="container">
-        <component :is="onglets[composantActif]" />
-    </div>
+    <Transition name="slide-fade" mode="out-in">
+        <div class="container" :key="composantActif">
+            <component :is="onglets[composantActif]" />
+        </div>
+    </Transition>
 
 </template>
 <script setup>
-
 import Skills from './Skills.vue';
 import Home from './Home.vue';
 import Contact from './Contact.vue';
 import ProjectList from './ProjectList.vue';
 import AboutSection from './AboutSection.vue';
 
-import { ref, watch } from 'vue';
+import { ref, shallowRef, Transition } from 'vue';
+
 
 const onglets = {
     home: Home,
@@ -36,11 +39,8 @@ const onglets = {
     skills: Skills
 }
 
-const composantActif = ref('home');
+const composantActif = shallowRef('home');
 
-watch(composantActif, (oldValue, newValue) => {
-
-});
 </script>
 <style scoped>
 @import "../assets/main.css";
@@ -56,6 +56,8 @@ nav {
     align-items: center;
     gap: 25px;
     border-bottom: 10px solid var(--primary-dark);
+    flex-wrap: wrap;
+    height: auto;
 }
 
 .navLinks {
@@ -74,6 +76,48 @@ nav {
 }
 
 .container {
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+.slide-fade-enter-from {
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.slide-fade-enter-to {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-fade-leave-from {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navLinks {
+        font-size: 1.5rem;
+    }
 }
 </style>

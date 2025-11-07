@@ -17,6 +17,7 @@ body {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250vh;
+  min-height: 100%;
+  overflow-y: visible;
   font-family: "Roboto", sans-serif;
 }

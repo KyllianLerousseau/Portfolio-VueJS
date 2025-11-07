@@ -44,10 +44,12 @@
 
 .text-container {
     padding: 10px;
-    width: 100%;
-    height: 400px;
+    width: 80%;
+    max-width: 800px;
+    height: auto;
     border: 2px solid var(--neutral-light);
     color: var(--accent);
+    text-align: center;
 }
 
 .text-container h2 {
@@ -56,5 +58,17 @@
 
 .text {
     font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    .text-container {
+        margin-top: 35%;
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .text {
+        font-size: 18px;
+    }
 }
 </style>

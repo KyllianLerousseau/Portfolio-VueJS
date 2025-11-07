@@ -2,6 +2,7 @@
     <div class="skill-badge">
         <h3>{{ title }}</h3>
         <img :src="img" :alt="title" class="skill-icon">
+        <p> {{ progress + '%' }}</p>
         <div class="progress-bar">
             <div class="progress" :style="{ width: progress + '%' }"></div>
         </div>
@@ -19,11 +20,11 @@ defineProps({
 <style scoped>
 .skill-badge {
     width: 250px;
-    height: 200px;
+    height: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 12px;
     background-color: #0f172ad0;
     color: var(--text-light);
@@ -56,5 +57,30 @@ defineProps({
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     background-repeat: no-repeat;
 
+}
+
+@media (max-width: 900px) {
+
+    .skill-badge {
+        width: 220px;
+        height: 180px;
+    }
+
+    .skill-icon {
+        height: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .skill-badge {
+        width: 90%;
+        height: auto;
+        padding: 16px;
+    }
+
+    .skill-icon {
+        height: 60px;
+    }
 }
 </style>

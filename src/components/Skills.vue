@@ -1,4 +1,5 @@
 <template>
+    <h1>Niveau de compétences</h1>
     <div class="skills">
         <SkillBadge v-for="(skill, index) in skills" :title="skill.title" :img="skill.img" :key="index"
             :class="{ on: activeIndexes.includes(index) }"
@@ -12,13 +13,13 @@ import SkillBadge from './SkillBadge.vue';
 
 const skills = ref([
     { title: 'HTML', progress: 90, img: '/img/HTML.png' },
-    { title: 'CSS', progress: 80, img: '/img/CSS.png' },
+    { title: 'CSS', progress: 70, img: '/img/CSS.png' },
     { title: 'Javascript', progress: 70, img: '/img/Javascript.png' },
-    { title: 'VueJS', progress: 32, img: '/img/VueJS.png' },
+    { title: 'VueJS', progress: 40, img: '/img/VueJS.png' },
     { title: 'NodeJS', progress: 20, img: '/img/NodeJS.png' },
     { title: 'PHP', progress: 65, img: '/img/PHP.png' },
-    { title: 'PHP Symfony', progress: 60, img: '/img/Symfony.png' },
-    { title: 'ReactJS & React-Native', progress: 30, img: '/img/ReactJS.png' },
+    { title: 'Symfony', progress: 60, img: '/img/Symfony.png' },
+    { title: 'ReactJS & React-Native', progress: 50, img: '/img/ReactJS.png' },
     { title: 'MySQL', progress: 60, img: '/img/MySQL.png' }
 ]);
 
@@ -47,5 +48,35 @@ onMounted(() => {
 
 }
 
+h1 {
+    text-align: center;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        margin-top: 40%;
+    }
+    .skills {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+}
 
 </style>

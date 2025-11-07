@@ -114,14 +114,22 @@ function validationMessage() {
     transform: translateY(-6px);
 }
 
-.textForm {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.textForm label,
+.emailForm label,
+.nomForm label {
+    margin-left: 5px;
 }
 
-.textForm label {
-    margin-left: 5px;
+.emailForm input,
+.nomForm input {
+    padding: 10px 12px;
+    border: 2px solid var(--neutral-light);
+    outline: none;
+    border-radius: 12px;
+    background-color: var(--neutral-dark);
+    color: var(--text-light);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .textForm textarea {
@@ -135,48 +143,8 @@ function validationMessage() {
     margin-left: 5px;
     background-color: var(--neutral-dark);
     color: var(--text-light);
-}
-
-.emailForm {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.emailForm label {
-    margin-left: 5px;
-}
-
-.emailForm input {
-    padding: 10px 12px;
-    border: 2px solid var(--neutral-light);
-    outline: none;
-    border-radius: 12px;
-    margin-left: 5px;
-    background-color: var(--neutral-dark);
-    color: var(--text-light);
-    width: 200px;
-}
-
-.nomForm {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.nomForm label {
-    margin-left: 5px;
-}
-
-.nomForm input {
-    padding: 10px 12px;
-    border: 2px solid var(--neutral-light);
-    outline: none;
-    border-radius: 12px;
-    margin-left: 5px;
-    background-color: var(--neutral-dark);
-    color: var(--text-light);
-    width: 200px;
+    justify-content: center;
 }
 
 .formContact {
@@ -189,10 +157,31 @@ function validationMessage() {
 }
 
 .formContainer {
-    margin: 10% auto;
+    margin: 5% auto;
     width: 500px;
+    max-width: 90%;
     padding: 15px;
     background-color: var(--neutral-dark);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .formContainer {
+        margin: 45% 2%;
+        width: 95%;
+        padding: 10px;
+    }
+
+    .textForm textarea {
+        height: 120px;
+        width: 300px;
+    }
+
+    .sumbitBtn {
+        max-width: 100%;
+    }
 }
 </style>
