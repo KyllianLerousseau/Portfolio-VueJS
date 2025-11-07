@@ -13,14 +13,14 @@ import SkillBadge from './SkillBadge.vue';
 
 const skills = ref([
     { title: 'HTML', progress: 90, img: '/img/HTML.png' },
-    { title: 'CSS', progress: 70, img: '/img/CSS.png' },
-    { title: 'Javascript', progress: 70, img: '/img/Javascript.png' },
+    { title: 'CSS', progress: 60, img: '/img/CSS.png' },
+    { title: 'Javascript', progress: 50, img: '/img/Javascript.png' },
     { title: 'VueJS', progress: 40, img: '/img/VueJS.png' },
-    { title: 'NodeJS', progress: 20, img: '/img/NodeJS.png' },
-    { title: 'PHP', progress: 65, img: '/img/PHP.png' },
+    { title: 'NodeJS', progress: 30, img: '/img/NodeJS.png' },
+    { title: 'PHP', progress: 55, img: '/img/PHP.png' },
     { title: 'Symfony', progress: 60, img: '/img/Symfony.png' },
     { title: 'ReactJS & React-Native', progress: 50, img: '/img/ReactJS.png' },
-    { title: 'MySQL', progress: 60, img: '/img/MySQL.png' }
+    { title: 'MySQL', progress: 70, img: '/img/MySQL.png' }
 ]);
 
 const activeIndexes = ref([]);
